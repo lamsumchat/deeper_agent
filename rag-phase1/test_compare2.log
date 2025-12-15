@@ -1,0 +1,53 @@
+2025-12-09 20:58:43,743 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-12-09 20:58:46,410 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+
+✓ Loaded 49 documents
+
+=== Filtered retrieval (source_url constrained) ===
+- 1. source=https://developers.llamaindex.ai/python/framework/understanding/rag/, score=0.573
+  snippet: [install LlamaIndex](/python/framework/getting_started/installation) and complete the [starter tutorial](/python/framework/getting_started/starter_example) befo...
+
+================================================================================
+COMPARISON: Different Retrieval Strategies
+================================================================================
+
+[1/3] Vector-only retrieval...
+
+=== Strategy 1: Vector-only ===
+RAG 系统的核心价值在于能够有效地结合检索和生成的能力，从而提供准确和相关的答案。这种方法使得系统能够利用外部知识库进行信息检索，同时生成自然语言响应，提升了问答的质量和用户体验。
+
+主要挑战包括确保检索到的信息的准确性和相关性，以及在生成回答时保持上下文的一致性。此外，处理多样化的查询和优化系统的性能也是需要克服的重要问题。 [Source: https://developers.llamaindex.ai/python/framework/understanding/rag/]
+
+Retrieved sources:
+- 1. score=0.539 source=https://developers.llamaindex.ai/python/framework/understanding/rag/
+
+[2/3] Hybrid retrieval (Vector + BM25)...
+Traceback (most recent call last):
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 312, in <module>
+    main()
+    ~~~~^^
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 304, in main
+    compare_retrieval_strategies(index, QUESTION)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 256, in compare_retrieval_strategies
+    hybrid_retriever = create_hybrid_retriever(index)
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 191, in create_hybrid_retriever
+    bm25_retriever = BM25Retriever.from_defaults(
+        nodes=nodes,
+        similarity_top_k=5
+    )
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/llama_index/retrievers/bm25/base.py", line 173, in from_defaults
+    raise ValueError("Please pass exactly one of index, nodes, or docstore.")
+ValueError: Please pass exactly one of index, nodes, or docstore.

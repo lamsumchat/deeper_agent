@@ -1,0 +1,68 @@
+2025-12-09 20:56:31,378 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-12-09 20:56:33,715 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-09 20:56:35,862 - DEBUG - Building index from IDs objects
+/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/bm25s/__init__.py:305: RuntimeWarning: Mean of empty slice.
+  avg_doc_len = np.array([len(doc_ids) for doc_ids in corpus_token_ids]).mean()
+/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:144: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+
+✓ Loaded 49 documents
+
+=== Filtered retrieval (source_url constrained) ===
+- 1. source=https://developers.llamaindex.ai/python/framework/understanding/rag/, score=0.573
+  snippet: [install LlamaIndex](/python/framework/getting_started/installation) and complete the [starter tutorial](/python/framework/getting_started/starter_example) befo...
+
+================================================================================
+COMPARISON: Different Retrieval Strategies
+================================================================================
+
+[1/3] Vector-only retrieval...
+
+=== Strategy 1: Vector-only ===
+RAG 系统的核心价值在于能够有效地结合检索和生成的能力，从而提供准确和相关的答案。这种方法利用外部知识库来增强生成模型的表现，使其在处理复杂查询时更加灵活和高效。
+
+主要挑战包括确保检索到的信息的准确性和相关性，以及如何有效地整合这些信息以生成自然流畅的回答。此外，系统还需要处理信息的多样性和复杂性，以满足用户的不同需求。 [Source: https://developers.llamaindex.ai/python/framework/understanding/rag/]
+
+Retrieved sources:
+- 1. score=0.539 source=https://developers.llamaindex.ai/python/framework/understanding/rag/
+
+[2/3] Hybrid retrieval (Vector + BM25)...
+Traceback (most recent call last):
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 311, in <module>
+    main()
+    ~~~~^^
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 303, in main
+    compare_retrieval_strategies(index, documents, QUESTION)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 255, in compare_retrieval_strategies
+    hybrid_retriever = create_hybrid_retriever(index, documents)
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/rag_demo.py", line 190, in create_hybrid_retriever
+    bm25_retriever = BM25Retriever.from_defaults(
+        docstore=index.docstore,
+        similarity_top_k=5
+    )
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/llama_index/retrievers/bm25/base.py", line 185, in from_defaults
+    return cls(
+        nodes=nodes,
+    ...<6 lines>...
+        filters=filters,
+    )
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/llama_index/retrievers/bm25/base.py", line 112, in __init__
+    self.bm25.index(corpus_tokens, show_progress=verbose)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lamsumchat/Documents/coding_projects/playground/ai_tutorials/agentalpha/.venv/lib/python3.13/site-packages/bm25s/__init__.py", line 501, in index
+    vocab_dict[""] = max(vocab_dict.values()) + 1
+                     ~~~^^^^^^^^^^^^^^^^^^^^^
+ValueError: max() iterable argument is empty

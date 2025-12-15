@@ -1,0 +1,28 @@
+2025-12-09 20:55:54,225 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-12-09 20:55:57,862 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+
+✓ Loaded 49 documents
+
+=== Filtered retrieval (source_url constrained) ===
+- 1. source=https://developers.llamaindex.ai/python/framework/understanding/rag/, score=0.573
+  snippet: [install LlamaIndex](/python/framework/getting_started/installation) and complete the [starter tutorial](/python/framework/getting_started/starter_example) befo...
+
+=== Vector-only Query ===
+RAG 系统的核心价值在于能够有效地结合检索和生成的能力，从而提供准确和相关的答案。这种方法使得系统能够利用外部知识库，增强回答的质量和准确性。
+
+主要挑战包括如何确保检索到的信息的相关性和准确性，以及在生成答案时如何有效地整合这些信息。此外，处理大量数据和优化检索效率也是需要克服的重要问题。 [Source: https://developers.llamaindex.ai/python/framework/understanding/rag/]
+
+Retrieved sources:
+- 1. score=0.539 source=https://developers.llamaindex.ai/python/framework/understanding/rag/
